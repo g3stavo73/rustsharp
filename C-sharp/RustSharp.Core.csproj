@@ -1,9 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
     <RootNamespace>RustSharp.Core</RootNamespace>
+    <AssemblyName>RustSharp.Core</AssemblyName>
+    <PackageId>RustSharp.Core</PackageId>
+    <Version>0.3.0</Version>
+
+    <Description>Interop and runtime contract layer between the RustSharp native engine and .NET consumers.</Description>
+    <RepositoryUrl>https://github.com/g3stavo73/rustsharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <IsPackable>true</IsPackable>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 </Project>
