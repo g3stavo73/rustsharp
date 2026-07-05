@@ -1,14 +1,27 @@
 [package]
-name = "rustsharp"
-version = "0.1.0"
+name    = "rustsharp-core"
+version = "0.2.0"
 edition = "2021"
+description = "RustSharp native runtime engine — ABI-stable cdylib with module system"
 
 [lib]
-name = "rustsharp"
-crate-type = ["cdylib"]
+name       = "rustsharp"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["native"]
+native  = []
+
+
+[dependencies]
 
 [profile.release]
-opt-level = 3
-lto = true
+opt-level     = 3
+lto           = true
 codegen-units = 1
-panic = "abort"
+panic         = "abort"
+strip         = "symbols"
+
+[profile.dev]
+opt-level = 0
+debug     = true
